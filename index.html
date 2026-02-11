@@ -1,47 +1,112 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heleen Waterbolk</title>
+    <title>Project Waterbolk</title>
     <style>
-        /* Een beetje basisstyling om het er direct goed uit te laten zien */
-        nav {
-            background-color: #333;
-            padding: 10px;
-        }
-        nav ul {
-            list-style-type: none;
+        body {
+            background-color: #000;
+            color: white;
+            font-family: sans-serif;
             margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 20px;
+        }
+
+        /* HET NAVIGATIEMENU */
+        nav {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #333;
         }
         nav a {
             color: white;
+            margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #aaa;
+        }
+
+        /* DE LAYOUT VOOR DE CONTENT */
+        .content-wrapper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .text-box {
+            flex: 1;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .text-box h3 {
+            margin-top: 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .image-container {
+            flex: 0 0 auto;
+        }
+
+        .image-container img {
+            max-width: 450px;
+            height: auto;
+            /* Subtiele rand zodat een wit plaatje niet 'verdwijnt' in de zwarte achtergrond */
+            border: 1px solid #222; 
+            display: block;
+        }
+
+        /* Mobiele weergave: alles onder elkaar op kleine schermen */
+        @media (max-width: 1000px) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            .text-box { 
+                width: 100%; 
+                max-width: 600px;
+            }
+            .image-container {
+                order: -1; /* Zet de afbeelding bovenaan op mobiel */
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Heleen Waterbolk</h1>
-    </header>
-
     <nav>
-        <ul>
-            <li><a href="theorie/theorie.html">THEORIE</a></li>
-            <li><a href="beweging/beweging.html">BEWEGING</a></li>
-            <li><a href="zwerftocht/zwerftocht.html">ZWERFTOCHT</a></li>
-            <li><a href="mengsel/mengsel.html">MENGSEL</a></li>
-              <li><a href="waarneming/waarneming.html">WAARNEMING</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="contact.html">Contact</a>
     </nav>
+
+    <div class="content-wrapper">
+        
+        <div class="text-box">
+            <h3>Over de praktijk</h3>
+            <p>Mijn werk is een voortdurende verkenning van sequenties en "scores". Oorspronkelijk geïnspireerd door de mechanische bewegingen van film en de kinetische energie van de stad (van de Mickey Mouse-motieven in New York tot de hitte die van het asfalt trilt), is mijn praktijk geëvolueerd naar een studie over hoe digitale data gematerialiseerd kan worden.</p>
+        </div>
+
+        <div class="image-container">
+            <img src="images/europa.jpg" alt="Europa" onerror="this.style.border='2px solid red'; console.log('Check of de afbeelding wel in de map images staat');">
+        </div>
+
+        <div class="text-box">
+            <h3>Visuele Frequenties</h3>
+            <p>Met behulp van software zoals Director en Vectorworks ontwikkel ik animaties waarin figuren bewegen volgens specifieke frequenties. Deze digitale "clusters" en "duurmetingen" worden vervolgens vastgelegd en getransformeerd tot fysieke objecten: watergesneden stalen sculpturen en gelaagde composities.</p>
+        </div>
+
+    </div>
+
 </body>
 </html>

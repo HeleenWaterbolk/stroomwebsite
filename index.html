@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Waterbolk</title>
     <style>
-        /* Zorg dat de pagina de volledige hoogte vult */
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
             background-color: #000;
-            color: white;
+            color: #000; /* Standaard tekstkleur zwart */
             font-family: sans-serif;
         }
 
-        /* Achtergrond instellingen */
         .bg-container {
             position: relative;
             width: 100%;
@@ -23,22 +21,20 @@
             background-image: url('images/europa.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Houdt de afbeelding op zijn plek bij scrollen */
+            background-attachment: fixed;
             display: flex;
             flex-direction: column;
         }
 
-        /* Navigatiemenu bovenop de achtergrond */
         nav {
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparant zwart */
+            background-color: rgba(255, 255, 255, 0.1); /* Licht transparant wit voor het menu */
             padding: 20px;
             text-align: center;
-            backdrop-filter: blur(5px); /* Subtiel vervagingseffect achter het menu */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         nav a {
-            color: white;
+            color: #000; /* Menu links ook zwart */
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
@@ -47,44 +43,38 @@
             font-size: 0.9rem;
         }
 
-        nav a:hover {
-            color: #ccc;
-        }
-
-        /* Container voor de tekstkaders */
         .content-overlay {
             flex-grow: 1;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 10%; /* Ruimte aan de zijkanten */
+            padding: 0 10%;
             gap: 40px;
         }
 
-        /* De zwevende tekstkaders */
+        /* De tekstboxen zonder achtergrond */
         .text-box {
             flex: 1;
-            background-color: rgba(0, 0, 0, 0.7); /* Donkere doorzichtige achtergrond */
-            padding: 30px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px); /* Maakt de tekst beter leesbaar op drukke foto's */
+            background-color: transparent; /* Geen achtergrondkleur */
+            padding: 20px;
+            border: none; /* Geen lijntjes meer */
             max-width: 400px;
+            color: #000; /* Letters zwart */
         }
 
         .text-box h2 {
             margin-top: 0;
             font-size: 1.2rem;
-            border-bottom: 1px solid white;
+            border-bottom: 1px solid #000; /* Zwart lijntje onder de kop */
             padding-bottom: 10px;
         }
 
         .text-box p {
             line-height: 1.6;
             margin-bottom: 0;
+            font-weight: 500; /* Iets dikker voor betere leesbaarheid op de foto */
         }
 
-        /* Mobiele weergave */
         @media (max-width: 800px) {
             .content-overlay {
                 flex-direction: column;
@@ -93,7 +83,7 @@
             }
             .text-box {
                 max-width: 100%;
-                margin-bottom: 20px;
+                text-align: center;
             }
         }
     </style>

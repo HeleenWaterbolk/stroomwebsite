@@ -17,7 +17,7 @@
         .work-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px; /* Iets meer ruimte voor de tekst */
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -30,7 +30,21 @@
             flex-direction: column;
         }
 
-        /* Alles exact even groot en zonder kaders */
+        /* Styling voor de links om de afbeeldingen heen */
+        .media-link {
+            text-decoration: none;
+            display: block;
+            overflow: hidden; /* Zorgt dat effecten binnen het kader blijven */
+            transition: opacity 0.3s ease; /* Zorgt voor vloeiend oplichten */
+        }
+
+        /* HET OPLICHTEN: Bij hover wordt de afbeelding lichter */
+        .media-link:hover {
+            opacity: 0.8; /* Maakt de afbeelding iets transparanter/lichter */
+            cursor: pointer;
+        }
+
+        /* Alles exact even groot */
         .media-item {
             width: 100%;
             aspect-ratio: 1 / 1; 
@@ -38,9 +52,6 @@
             display: block;
             border: none;
             outline: none;
-            padding: 0;
-            margin: 0;
-            background-color: #f0f0f0;
         }
 
         /* Styling voor de ondertitels */
@@ -48,34 +59,34 @@
             margin-top: 10px;
             font-size: 14px;
             color: #333;
-            text-align: center; /* Tekst in het midden */
+            text-align: center;
             line-height: 1.4;
-        }
-
-        video.media-item {
-            background-color: #000;
         }
     </style>
 </head>
 <body>
 
     <div class="work-grid">
-        
         <figure>
-            <img src="images/rebus.jpg" alt="Rebus" class="media-item">
+            <a href="images/rebus.jpg" target="_blank" class="media-link">
+                <img src="images/rebus.jpg" alt="Rebus" class="media-item">
+            </a>
             <figcaption>metal sculpturen</figcaption>
-        </figure>
-        
- <figure>
-            <img src="images/1.jpg" alt="Rebus" class="media-item">
+        </figure> 
+
+        <figure>
+            <a href="images/1.jpg" target="_blank" class="media-link">
+                <img src="images/1.jpg" alt="Schilderij" class="media-item">
+            </a>
             <figcaption>'schilderij'</figcaption>
         </figure>
-        
+
         <figure>
-            <img src="images/poorten.jpg" alt="Image 1" class="media-item">
+            <a href="images/poorten.jpg" target="_blank" class="media-link">
+                <img src="images/poorten.jpg" alt="Hout sculptuur" class="media-item">
+            </a>
             <figcaption>hout sculptuur</figcaption>
         </figure>
-
     </div>
 
 </body>

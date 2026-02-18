@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work - Project Waterbolk</title>
     <style>
-        /* Basis instellingen voor de pagina */
+        /* Basis instellingen */
         body {
             margin: 0;
             padding: 20px;
@@ -13,29 +13,45 @@
             font-family: sans-serif;
         }
 
-        /* Het grid dat de items naast elkaar zet */
+        /* Het grid */
         .work-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px; /* Ruimte tussen de items */
+            gap: 25px; /* Iets meer ruimte voor de tekst */
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* DE OPLOSSING: Alles exact even groot en zonder kaders */
+        /* Container voor afbeelding/video + tekst */
+        figure {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Alles exact even groot en zonder kaders */
         .media-item {
             width: 100%;
-            aspect-ratio: 1 / 1; /* Forceert een exact vierkant formaat */
-            object-fit: cover;    /* Zorgt dat beeld vult zonder te vervormen */
+            aspect-ratio: 1 / 1; 
+            object-fit: cover;
             display: block;
-            border: none;         /* Verwijdert kaderlijntjes */
+            border: none;
             outline: none;
             padding: 0;
             margin: 0;
-            background-color: #f0f0f0; /* Tijdelijke kleur tijdens laden */
+            background-color: #f0f0f0;
         }
 
-        /* Extra check voor video's */
+        /* Styling voor de ondertitels */
+        figcaption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+            text-align: center; /* Tekst in het midden */
+            line-height: 1.4;
+        }
+
         video.media-item {
             background-color: #000;
         }
@@ -45,9 +61,23 @@
 
     <div class="work-grid">
         
-        <img src="images/rebus.jpg" alt="Rebus" class="media-item">
+        <figure>
+            <img src="images/rebus.jpg" alt="Rebus" class="media-item">
+            <figcaption>Hier komt de tekst voor de Rebus</figcaption>
+        </figure>
 
-        <img src="images/1.jpg" alt="Image 1" class="media-item">
+        <figure>
+            <video class="media-item" autoplay muted loop playsinline>
+                <source src="videos/1.mp4" type="video/mp4">
+                Je browser ondersteunt geen video.
+            </video>
+            <figcaption>Beschrijving van de video</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/1.jpg" alt="Image 1" class="media-item">
+            <figcaption>Hier komt de tekst voor de eerste afbeelding</figcaption>
+        </figure>
 
     </div>
 

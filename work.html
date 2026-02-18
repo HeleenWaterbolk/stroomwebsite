@@ -1,4 +1,61 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work - Project Waterbolk</title>
+    <style>
+        /* Basis styling voor de layout */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+        }
 
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* DE OPLOSSING VOOR AFMETINGEN EN KADERS:
+           We gebruiken 'aspect-ratio' om ze exact even groot te houden.
+        */
+        .media-item {
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Of 1 / 1 voor vierkant */
+            object-fit: cover;
+            
+            /* Verwijder alle lijntjes en randen */
+            border: none !important;
+            outline: none !important;
+            display: block;
+            padding: 0;
+            margin: 0;
+            background: none;
+        }
+
+        /* Verwijder eventuele witruimte onder de video/img */
+        video, img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <img src="jouw-afbeelding-1.jpg" alt="Project 1" class="media-item">
+
+        <video class="media-item" autoplay muted loop playsinline>
+            <source src="jouw-video.mp4" type="video/mp4">
+            Je browser ondersteunt deze video niet.
+        </video>
+
+        <img src="jouw-afbeelding-2.jpg" alt="Project 2" class="media-item">
+    </div>
+
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="nl">
 <head>

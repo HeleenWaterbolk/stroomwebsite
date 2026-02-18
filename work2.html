@@ -16,15 +16,13 @@
         /* Het grid */
         .work-grid {
             display: grid;
-            /* Pas de 300px aan om de kolommen breder of smaller te maken */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px 25px; /* Meer ruimte onder de figcaptions */
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
-            align-items: start; /* Zorgt dat items bovenaan uitlijnen */
         }
 
-        /* Container voor afbeelding + tekst */
+        /* Container voor afbeelding/video + tekst */
         figure {
             margin: 0;
             padding: 0;
@@ -32,37 +30,43 @@
             flex-direction: column;
         }
 
-        /* Styling voor de links om de afbeeldingen heen */
+        /* Link styling voor oplichten en klikbaarheid */
         .media-link {
             text-decoration: none;
             display: block;
-            transition: opacity 0.3s ease; /* Zorgt voor vloeiend oplichten */
-            background-color: #fff; /* Basis voor het oplicht-effect */
+            transition: opacity 0.3s ease;
         }
 
-        /* OPLICHTEN: Bij hover wordt de afbeelding lichter */
         .media-link:hover {
-            opacity: 0.7; 
+            opacity: 0.7; /* Het oplichten */
             cursor: pointer;
         }
 
-        /* De afbeeldingen met JUISTE aspect ratio */
+        /* De afbeeldingen: RECHTHOEKIG maken */
         .media-item {
             width: 100%;
-            height: auto; /* Behoudt de originele verhoudingen */
+            /* Verander 3 / 2 naar 2 / 3 voor staand of 16 / 9 voor extra breed */
+            aspect-ratio: 3 / 2; 
+            object-fit: cover; /* Zorgt dat de afbeelding het vlak vult */
             display: block;
             border: none;
             outline: none;
+            padding: 0;
+            margin: 0;
+            background-color: #f0f0f0;
         }
 
-        /* Styling voor de onderschriften */
+        /* Styling voor de ondertitels */
         figcaption {
-            margin-top: 12px;
+            margin-top: 10px;
             font-size: 14px;
             color: #333;
             text-align: center;
             line-height: 1.4;
-            font-style: normal;
+        }
+
+        video.media-item {
+            background-color: #000;
         }
     </style>
 </head>

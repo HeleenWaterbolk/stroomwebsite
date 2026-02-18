@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work - Project Waterbolk</title>
+    <style>
+        /* Basis instellingen voor de pagina */
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+            font-family: sans-serif;
+        }
+
+        /* Het grid dat de items naast elkaar zet */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px; /* Ruimte tussen de items */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* DE OPLOSSING: Alles exact even groot en zonder kaders */
+        .media-item {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Forceert een exact vierkant formaat */
+            object-fit: cover;    /* Zorgt dat beeld vult zonder te vervormen */
+            display: block;
+            border: none;         /* Verwijdert kaderlijntjes */
+            outline: none;
+            padding: 0;
+            margin: 0;
+            background-color: #f0f0f0; /* Tijdelijke kleur tijdens laden */
+        }
+
+        /* Extra check voor video's */
+        video.media-item {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="work-grid">
+        
+        <img src="images/rebus.jpg" alt="Rebus" class="media-item">
+
+        <video class="media-item" autoplay muted loop playsinline>
+            <source src="videos/1.mp4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+
+        <img src="images/1.jpg" alt="Image 1" class="media-item">
+
+    </div>
+
+</body>
+</html>

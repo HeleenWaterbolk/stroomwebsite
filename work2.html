@@ -1,1 +1,83 @@
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work - Project Waterbolk</title>
+    <style>
+        /* Basis instellingen */
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+            font-family: sans-serif;
+        }
+
+        /* Het grid */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px; /* Iets meer ruimte voor de tekst */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Container voor afbeelding/video + tekst */
+        figure {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Alles exact even groot en zonder kaders */
+        .media-item {
+            width: 100%;
+            aspect-ratio: 1 / 1; 
+            object-fit: cover;
+            display: block;
+            border: none;
+            outline: none;
+            padding: 0;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Styling voor de ondertitels */
+        figcaption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+            text-align: center; /* Tekst in het midden */
+            line-height: 1.4;
+        }
+
+        video.media-item {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="work-grid">
+        
+        <figure>
+            <img src="images/rebus.jpg" alt="Rebus" class="media-item">
+            <figcaption>metal sculpturen</figcaption>
+        </figure>
+        
+ <figure>
+            <img src="images/1.jpg" alt="Rebus" class="media-item">
+            <figcaption>'schilderij'</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/poorten.jpg" alt="Image 1" class="media-item">
+            <figcaption>hout sculptuur</figcaption>
+        </figure>
+
+    </div>
+
+</body>
+</html>

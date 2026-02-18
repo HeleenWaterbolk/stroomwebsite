@@ -5,47 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work - Project Waterbolk</title>
     <style>
+        /* Basis instellingen voor de pagina */
         body {
             margin: 0;
             padding: 20px;
-            background-color: white;
+            background-color: #ffffff;
+            font-family: sans-serif;
         }
 
-        .gallery {
+        /* Het grid dat de items naast elkaar zet */
+        .work-grid {
             display: grid;
-            /* Dit zet ze netjes naast elkaar */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 10px;
+            gap: 15px; /* Ruimte tussen de items */
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* De 'magie' voor gelijke grootte en geen lijntjes */
+        /* DE OPLOSSING: Alles exact even groot en zonder kaders */
         .media-item {
             width: 100%;
-            aspect-ratio: 1 / 1; /* Maakt alles vierkant, verander naar 16/9 voor breedbeeld */
-            object-fit: cover;
-            border: none;
-            outline: none;
+            aspect-ratio: 1 / 1; /* Forceert een exact vierkant formaat */
+            object-fit: cover;    /* Zorgt dat beeld vult zonder te vervormen */
             display: block;
+            border: none;         /* Verwijdert kaderlijntjes */
+            outline: none;
             padding: 0;
             margin: 0;
+            background-color: #f0f0f0; /* Tijdelijke kleur tijdens laden */
         }
 
-        video {
-            background-color: white;
+        /* Extra check voor video's */
+        video.media-item {
+            background-color: #000;
         }
     </style>
 </head>
 <body>
 
-    <div class="gallery">
+    <div class="work-grid">
+        
+        <img src="images/rebus.jpg" alt="Rebus" class="media-item">
+
         <video class="media-item" autoplay muted loop playsinline>
-            <source src="video/video-work.mp4" type="video/mp4">
+            <source src="videos/1.mp4" type="video/mp4">
             Je browser ondersteunt geen video.
         </video>
 
-        <img src="img/img-1.jpg" class="media-item" alt="Werk 1">
-        <img src="img/img-2.jpg" class="media-item" alt="Werk 2">
-        <img src="img/img-3.jpg" class="media-item" alt="Werk 3">
+        <img src="images1.jpg" alt="Image 1" class="media-item">
+
     </div>
 
 </body>

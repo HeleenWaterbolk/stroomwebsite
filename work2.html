@@ -16,13 +16,15 @@
         /* Het grid */
         .work-grid {
             display: grid;
+            /* Pas de 300px aan om de kolommen breder of smaller te maken */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px; /* Iets meer ruimte voor de tekst */
+            gap: 40px 25px; /* Meer ruimte onder de figcaptions */
             max-width: 1200px;
             margin: 0 auto;
+            align-items: start; /* Zorgt dat items bovenaan uitlijnen */
         }
 
-        /* Container voor afbeelding/video + tekst */
+        /* Container voor afbeelding + tekst */
         figure {
             margin: 0;
             padding: 0;
@@ -30,52 +32,63 @@
             flex-direction: column;
         }
 
-        /* Alles exact even groot en zonder kaders */
+        /* Styling voor de links om de afbeeldingen heen */
+        .media-link {
+            text-decoration: none;
+            display: block;
+            transition: opacity 0.3s ease; /* Zorgt voor vloeiend oplichten */
+            background-color: #fff; /* Basis voor het oplicht-effect */
+        }
+
+        /* OPLICHTEN: Bij hover wordt de afbeelding lichter */
+        .media-link:hover {
+            opacity: 0.7; 
+            cursor: pointer;
+        }
+
+        /* De afbeeldingen met JUISTE aspect ratio */
         .media-item {
             width: 100%;
-            aspect-ratio: 1 / 1; 
-            object-fit: cover;
+            height: auto; /* Behoudt de originele verhoudingen */
             display: block;
             border: none;
             outline: none;
-            padding: 0;
-            margin: 0;
-            background-color: #f0f0f0;
         }
 
-        /* Styling voor de ondertitels */
+        /* Styling voor de onderschriften */
         figcaption {
-            margin-top: 10px;
+            margin-top: 12px;
             font-size: 14px;
             color: #333;
-            text-align: center; /* Tekst in het midden */
+            text-align: center;
             line-height: 1.4;
-        }
-
-        video.media-item {
-            background-color: #000;
+            font-style: normal;
         }
     </style>
 </head>
 <body>
 
     <div class="work-grid">
-        
         <figure>
-            <img src="images/rebus.jpg" alt="Rebus" class="media-item">
+            <a href="images/rebus.jpg" target="_blank" class="media-link">
+                <img src="images/rebus.jpg" alt="Rebus" class="media-item">
+            </a>
             <figcaption>metal sculpturen</figcaption>
-        </figure>
-        
- <figure>
-            <img src="images/1.jpg" alt="Rebus" class="media-item">
+        </figure> 
+
+        <figure>
+            <a href="images/1.jpg" target="_blank" class="media-link">
+                <img src="images/1.jpg" alt="Schilderij" class="media-item">
+            </a>
             <figcaption>'schilderij'</figcaption>
         </figure>
-        
+
         <figure>
-            <img src="images/poorten.jpg" alt="Image 1" class="media-item">
+            <a href="images/poorten.jpg" target="_blank" class="media-link">
+                <img src="images/poorten.jpg" alt="Hout sculptuur" class="media-item">
+            </a>
             <figcaption>hout sculptuur</figcaption>
         </figure>
-
     </div>
 
 </body>
